@@ -111,6 +111,7 @@ def main():
     print(f'\nCIPHERTEXT : {ciphertext}\n')
     print('=>')
     print(f'\nPLAINTEXT : {plaintext} \n')
+    print(f'FREQUENCY : {wordfrequency}\n')
     print(f'KEY : {alphabet}\n')
     print('***Ignore capital letters***')
     print('***Alphabet with value 0 in dictionary is unknown because it never comes from ciphertext***\n')

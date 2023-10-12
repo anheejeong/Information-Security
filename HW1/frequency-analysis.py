@@ -1,5 +1,4 @@
 import re
-import sys
 import collections
 
 def word_freq(ciphertext):
@@ -45,7 +44,7 @@ def second_decrypt(ciphertext, plaintext, keyword, alphabet):
                 changeword1 = changeword1 + val
             else:
                 changeword2 = changeword2 + val
-    # *를 세개 이상 만들지 않으므로 최대 두개
+    # '*' make no more than three so a maximum of two
     ox = plaintext.find(findkeyword)
     if ox != -1:
         findword1 = ""
@@ -97,13 +96,8 @@ def main():
         else :
             plaintext = plaintext + "*"
 
-    # common word : the, that, it, have, been, was
-
-    # a b c  d  e f  g h i j k l  m  n o  p  q r  s t u v w x y z
-    # 3 6 11 11 1 14 0 2 4 0 0 10 15 6 12 13 0 10 8 1 9 5 7 0 0 0
     plaintext = decrypt(ciphertext, first, second, plaintext) # t, e
 
-    # 포함한 것 : this, too, by, teaches, raises
     keyword = ["the", "that", "it", "this", "too", "have", "been", "with", "was", "neither", "but", "several", "direct", "disclosed", "teaches", "raises", "political", "itself", "of", "informal", "cong", "yesterday", "higher", "imagine", "without", "universe", "and", "fidelity","flake", "happy"]
     for i in keyword:
         plaintext = second_decrypt(ciphertext, plaintext, i, alphabet)
